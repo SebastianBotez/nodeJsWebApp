@@ -74,7 +74,7 @@ module.exports = {
           response.message = 'Bine ai venit. Finalizeaza inregistrarea accesand link-ul primit in email!';
           res.json(response);
         });
-      } else {
+      } else { 
         response.error = true;
         response.errors = 'Exista un utilizator cu acest email in baza noastra de date.';
         res.json(response);
