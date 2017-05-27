@@ -1,0 +1,98 @@
+			<div class="page-hero" style="background-image: url(images/hero-1.jpg);">
+				<div class="container">
+					<div class="row">
+						<div class="col-xl-10 offset-xl-1 col-lg-10 offset-lg-1 col-xs-12">
+							<div class="page-hero-content">
+								<h1 class="page-title">Logare - Inregistrare</h1>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+
+			<main class="main main-elevated">
+				<div class="container">
+					<div class="row">
+						<div class="col-xl-10 offset-xl-1 col-lg-10 offset-lg-1 col-xs-12">
+							<div class="content-wrap" ng-controller="AuthController" ng-cloak>
+
+								<div class="box-message box-message-success hide" ng-show="response.success">
+									<div class="box-message-content">
+										<p>{{response.message}}</p>
+									</div>
+								</div>
+
+
+								<div class="box-message box-message-error" ng-show="response.error">
+									<div class="box-message-content">
+										<p>Oopsss. Au aparut cateva erori!</p>
+
+										<ul class="box-message-errors">
+											<li>{{response.errors}}</li>
+										</ul>
+									</div>
+								</div>
+
+								<div class="row">
+									<div class="col-lg-6 col-xs-12">
+										<form class="form-login" name="loginform" ng-submit="loginform.$valid && login()" novalidate>
+											<h3>Logare</h3>
+											<!-- {{response.errors}} -->
+											<div class="form-field">
+												<label for="username-login">Adresa de e-mail</label>
+												<input type="email" name="email" ng-model="login.email" ng-trim="true" id="username-login" required>
+											</div>
+
+											<div class="form-field">
+												<label for="username-password">Parola</label>
+												<input type="password" name="parola" ng-model="login.parola" id="username-password" required>
+											</div>
+
+											<div class="form-field">
+												<div class="pull-left">
+													<label>
+														<input type="checkbox" ng-model="login.remember" name="remember" /> Tine-ma minte
+													</label>
+												</div>
+												<div class="pull-right">
+													<a href="#">Ai uitat parola?</a>
+												</div>
+												<div class="clearfix"></div>
+											</div>
+
+											<div class="form-field">
+												<button type="submit" class="btn">Intra in cont</button>
+											</div>
+										</form>
+									</div>
+
+									<div class="col-lg-6 col-xs-12">
+										<form class="form-register" name="registerform" ng-submit="registerform.$valid && register()" novalidate>
+											<h3>Inregistrare</h3>
+
+											<div class="form-field">
+												<label for="email-register">E-mail</label>
+												<input type="email" name="email" ng-model="register.email" id="email-register" required>
+											</div>
+
+											<div class="form-field">
+												<label for="password-register">Parola</label>
+												<input type="password" name="parola" ng-model="register.parola" id="password-register" ng-minlength="5" required>
+											</div>
+
+											<div class="form-field">
+												<label for="password-register-again">Repeta parola</label>
+												<input type="password" name="repeta-parola" ng-model="register.rparola" id="password-register-again" ng-minlength="5" ng-match="register.parola" required>
+											</div>
+
+											<div class="form-field">
+												<button type="submit" class="btn">Inregistreaza-te</button>
+											</div>
+										</form>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</main>
