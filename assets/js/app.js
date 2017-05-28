@@ -37,6 +37,10 @@ app.controller('Chat', function($scope, $http){
 
 });
 
-io.socket.on('chat', function(event) {
-	console.log(event);
+io.socket.on('connect', function socketConnected() {
+
+	io.socket.on('message', function(message) {
+		alert(message);
+	});
+
 });
